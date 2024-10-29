@@ -1,0 +1,117 @@
+---
+import { works } from "../ui/works";
+import Layout from "../layouts/Layout.astro";
+import Starfield from "../components/General/Starfield.astro";
+import StyledButton from "../components/General/StyledButton.astro";
+import BackToTop from "../components/General/BackToTop";
+import { formatDescription } from "../ui/textFormatter";
+
+export function getStaticPaths() {
+    return works.map(
+        ({
+            slug,
+            title,
+            link,
+            description,
+            jobDone,
+            miniature,
+            desktopShowcase,
+            mobileShowcase,
+            fullpageShowcase,
+        }) => ({
+            params: {
+                slug,
+            },
+            props: {
+                title,
+                link,
+                description,
+                jobDone,
+                miniature,
+                desktopShowcase,
+                mobileShowcase,
+                fullpageShowcase,
+            },
+        }),
+    );
+}
+
+const {
+    title,
+    link,
+    description,
+    jobDone,
+    miniature,
+    desktopShowcase,
+    mobileShowcase,
+    fullpageShowcase,
+} = Astro.props;
+
+const formattedDescription = formatDescription(description);
+---
+
+<Layout title={title}>
+    <div
+        class="bg-dark text-white h-full overflow-hidden relative min-h-screen"
+    >
+        <BackToTop client:load />
+        <Starfield starsCount={40} />
+        <main class="p-desk flex flex-col items-center relative z-[2]">
+            <a
+                href="/"
+                class="text-xl font-light mb-8 w-full hover:text-primary transition-all"
+                >&larr; Volver</a
+            >
+            <h1 class="text-9xl text-center font-title">{title}</h1>
+            <p class="text-4xl leading-normal px-desk my-24 bg-dark">
+                {
+                    formattedDescription.map((desc, index) => (
+                        <span
+                            class={
+                                desc.highlighted
+                                    ? "font-bold text-orange-500 font-title"
+                                    : "text-white"
+                            }
+                        >
+                            {desc.text}
+                        </span>
+                    ))
+                }
+            </p>
+            <div class="relative">
+                <img
+                    src={desktopShowcase}
+                    alt={`Demostración en dispositivo de escritorio de ${title}`}
+                />
+                <img
+                    src={mobileShowcase}
+                    alt={`Demostración en dispositivo mobile de ${title}`}
+                    class="absolute top-20 right-0"
+                />
+            </div>
+            <div
+                class="border-y border-darkAccent my-desk py-24 w-full flex justify-center flex-wrap items-center gap-8 px-desk relative"
+            >
+                <h2
+                    class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-4xl text-orange-500 uppercase text-center font-title bg-dark px-8"
+                >
+                    Lo que he hecho
+                </h2>
+                {
+                    jobDone.map((job) => (
+                        <p class="text-2xl font-light hover:text-darkAccent hover:bg-white transition-all rounded-sm py-1 px-2 hover:cursor-default">
+                            <span class="text-darkAccent">#</span>
+                            {job}
+                        </p>
+                    ))
+                }
+            </div>
+            {link !== "" && <StyledButton link={link} text="Ver sitio" />}
+            <img
+                src={fullpageShowcase}
+                alt={`Demostración de ${title}`}
+                class="rounded-md"
+            />
+        </main>
+    </div>
+</Layout>

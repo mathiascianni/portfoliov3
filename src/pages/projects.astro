@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Starfield from "../components/General/Starfield.astro";
+import Divisor from "../components/General/Divisor.astro";
+import WorkSectionContainer from "../components/Work/WorkSectionContainer";
+import { works } from "../ui/works";
+---
+
+<Layout title="Mathias Cianni | Proyectos">
+    <div class="bg-dark text-white w-full h-full overflow-hidden relative">
+        <Starfield starsCount={20} />
+        <main class="z-10 relative p-desk min-h-screen">
+            <a
+                href="/"
+                class="text-xl font-light mb-desk inline-block hover:text-primary transition-all "
+                >&larr; Volver</a
+            >
+            <h1 class="text-7xl font-title uppercase mb-24">
+                Una selección de mis proyectos
+            </h1>
+            <WorkSectionContainer client:load works={works} ><Divisor /></WorkSectionContainer>
+        </main>
+    </div>
+</Layout>

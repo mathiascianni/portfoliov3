@@ -1,0 +1,73 @@
+---
+const { starsCount } = Astro.props;
+---
+
+<div class="min-h-full w-full absolute top-0 z-[1]">
+    <div class="stars1 h-full w-full absolute">
+        {
+            Array.from({ length: starsCount }, () => (
+                <img
+                    src="icons/star.svg"
+                    alt=""
+                    class="absolute opacity-80 w-[24px] h-[24px]"
+                    loading="lazy" 
+                />
+            ))
+        }
+    </div>
+    <div class="stars2 h-full w-full absolute">
+        {
+            Array.from({ length: starsCount }, () => (
+                <img
+                    src="icons/star.svg"
+                    alt=""
+                    class="absolute opacity-60 w-[16px] h-[16px]"
+                    loading="lazy" 
+                />
+            ))
+        }
+    </div>
+    <div class="stars3 h-full w-full absolute">
+        {
+            Array.from({ length: starsCount }, () => (
+                <img
+                    src="icons/star.svg"
+                    alt=""
+                    class="absolute opacity-30 w-[8px] h-[8px]"
+                    loading="lazy" 
+                />
+            ))
+        }
+    </div>
+</div>
+
+<script>
+    const randomizeStars = (stars) => {
+        stars.forEach((star) => {
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.top = `${Math.random() * 100}%`;
+        });
+    };
+
+    randomizeStars(document.querySelectorAll(".stars1 img"));
+    randomizeStars(document.querySelectorAll(".stars2 img"));
+    randomizeStars(document.querySelectorAll(".stars3 img"));
+
+    const starsContainers = [
+        document.querySelector(".stars1"),
+        document.querySelector(".stars2"),
+        document.querySelector(".stars3"),
+    ];
+
+    const parallaxSpeeds = [0.3, 0.6, 0.9];
+
+    window.addEventListener("scroll", () => {
+        const scrollPosition = window.scrollY;
+        starsContainers.forEach((container, index) => {
+            if (container instanceof HTMLElement) {
+                const speed = parallaxSpeeds[index];
+                container.style.transform = `translateY(${scrollPosition * speed}px)`;
+            }
+        });
+    });
+</script>

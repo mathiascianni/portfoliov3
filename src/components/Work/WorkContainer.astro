@@ -1,0 +1,10 @@
+---
+import { works } from "../../ui/works";
+import WorkContent from "./WorkContent";
+
+const worksToShow = works.slice(0, 3);
+---
+
+<section class="min-h-screen z-[2] relative p-desk">
+    <WorkContent client:visible worksToShow={worksToShow} />
+</section>

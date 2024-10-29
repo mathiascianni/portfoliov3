@@ -1,0 +1,49 @@
+---
+import { socials } from "../../ui/social";
+import { navLinks } from "../../ui/navbar";
+---
+
+<footer class="bg-darkAccent text-white py-16 px-desk">
+    <div class="flex gap-12">
+        <p class="font-title text-5xl uppercase">Mathias Cianni</p>
+        <ul class="flex-1 w-full flex gap-4 justify-center">
+            {
+                navLinks.map((link) => (
+                    <li>
+                        <a
+                            href={link.href}
+                            class=" transition-all text-2xl hover:bg-white hover:text-orange-500 rounded-sm p-4 inline-block"
+                        >
+                            {link.name}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+        <div class="flex flex-col gap-8">
+            <a
+                href="/contact"
+                class="bg-orange-500 px-8 py-4 text-center rounded-sm text-xl hover:bg-white hover:text-orange-500 hover:scale-105 transition-all block"
+                >Contactame &rarr;</a
+            >
+            <ul class="flex justify-between gap-4">
+                {
+                    socials.map((social) => (
+                        <li>
+                            <a
+                                href={social.action}
+                                target="_blank"
+                                class="transition-all text-xl bg-dark rounded-sm p-4 hover:bg-orange-500 hover:scale-110 block"
+                            >
+                                <img
+                                    src={`icons/${social.icon}`}
+                                    alt={social.text}
+                                />
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+    </div>
+</footer>

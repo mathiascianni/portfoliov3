@@ -1,0 +1,35 @@
+---
+import '@fontsource/barlow-condensed/700.css';
+import '@fontsource-variable/nunito-sans';
+import Navbar from "../components/General/Navbar";
+import Footer from '../components/General/Footer.astro';
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="font-body">
+		<Navbar client:load />
+		<slot />
+		<Footer />
+	</body>
+</html>
+
+<style>
+	html {
+		scroll-behavior: smooth;
+	}
+
+</style>

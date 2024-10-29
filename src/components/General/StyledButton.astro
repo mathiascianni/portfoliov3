@@ -1,0 +1,53 @@
+---
+const { link, text } = Astro.props;
+---
+
+<a class="flex items-center mb-desk gap-8 group" href={link} target="_blank">
+    <img
+        src="icons/star.svg"
+        alt=""
+        class="w-8 h-8 fill-primary star transition-all group-hover:sepia-0 group-hover:mr-1"
+        loading="lazy"
+    />
+    <img
+        src="icons/star.svg"
+        alt=""
+        class="w-12 h-12 fill-primary star transition-all group-hover:sepia-0 group-hover:mr-1"
+        loading="lazy"
+    />
+    <img
+        src="icons/star.svg"
+        alt=""
+        class="w-16 h-16 fill-primary star transition-all group-hover:sepia-0 group-hover:mr-1"
+        loading="lazy"
+    />
+    <div
+        class="text-4xl bg-primary text-white group-hover:bg-white group-hover:text-primary rounded-sm py-4 px-24 transition-all"
+    >
+        {text}
+    </div>
+    <img
+        src="icons/star.svg"
+        alt=""
+        class="w-16 h-16 fill-primary star transition-all group-hover:sepia-0  group-hover:ml-1"
+        loading="lazy"
+    />
+    <img
+        src="icons/star.svg"
+        alt=""
+        class="w-12 h-12 fill-primary star transition-all group-hover:sepia-0  group-hover:ml-1"
+        loading="lazy"
+    />
+    <img
+        src="icons/star.svg"
+        alt=""
+        class="w-8 h-8 fill-primary star transition-all group-hover:sepia-0  group-hover:ml-1"
+        loading="lazy"
+    />
+</a>
+
+<style>
+    .star {
+        filter: invert(0.5) sepia(1) hue-rotate(203deg) saturate(2000%);
+    }
+</style>

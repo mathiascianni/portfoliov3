@@ -1,0 +1,28 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Introduction from "../components/Header/Introduction.astro";
+import Starfield from "../components/General/Starfield.astro";
+import WorkContainer from "../components/Work/WorkContainer.astro";
+import AboutContainer from "../components/About/AboutContainer.astro";
+import ContactContainer from "../components/Contact/ContactContainer.astro";
+import Divisor from "../components/General/Divisor.astro";
+
+---
+
+<Layout title="Mathias Cianni | Portfolio">
+	<div class="bg-dark text-white h-full overflow-hidden relative">
+		<div
+			class="h-screen absolute w-full bg-gradient-to-t from-primary/70 to-dark"
+		>
+		</div>
+		<Starfield starsCount={40} />
+		<Introduction />
+		<main>
+			<AboutContainer></AboutContainer>
+			<Divisor />
+			<WorkContainer></WorkContainer>
+			<Divisor />
+			<ContactContainer></ContactContainer>
+		</main>
+	</div>
+</Layout>

@@ -1,0 +1,26 @@
+---
+const { social } = Astro.props;
+---
+
+<li class="relative group overflow">
+    <a
+        href={social.action}
+        target="_blank"
+        class="transition-all py-4 px-2 rounded-sm w-full border border-primary block relative overflow-hidden group"
+    >
+        <div
+            class="absolute top-0 -left-full group-hover:left-0 transition-all duration-500 bg-primary w-full h-full"
+        >
+        </div>
+        <span class="z-10 relative">{social.text}</span>
+    </a>
+    <div
+        class="absolute top-0 left-0 -translate-y-1/2 -translate-x-1/2 border border-primary bg-dark group-hover:border-dark group-hover:bg-primary transition-all p-4 duration-500 rounded-full"
+    >
+        <img
+            src={`icons/${social.icon}`}
+            alt={social.text}
+            class="w-8 h-8 transition-all"
+        />
+    </div>
+</li>
