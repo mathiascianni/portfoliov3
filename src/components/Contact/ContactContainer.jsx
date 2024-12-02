@@ -27,7 +27,7 @@ const ContactContainer = () => {
                         viewport={{ once: true }}
                     >
                         <motion.li variants={fadeInUpItem}><a href="mailto:mncianni@hotmail.com" className="py-4 px-8 bg-primary hover:bg-white hover:text-primary transition-all block rounded-full text-center" target="_blank">mncianni@hotmail.com</a></motion.li>
-                        <motion.li variants={fadeInUpItem}><a href="https://wa.me/1137008113" className="py-4 px-8 bg-primary hover:bg-white hover:text-primary transition-all block rounded-full text-center" target="_blank">11 3700 8113</a></motion.li>
+                        <motion.li variants={fadeInUpItem}><a href="https://wa.me/+541137008113" className="py-4 px-8 bg-primary hover:bg-white hover:text-primary transition-all block rounded-full text-center" target="_blank">11 3700 8113</a></motion.li>
                     </motion.ul>
                 </motion.div>
                 <motion.div
