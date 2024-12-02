@@ -35,7 +35,7 @@ const Navbar = () => {
     }, [lastScrollY])
 
     return (
-        <nav className={`fixed inline-flex items-center justify-between rounded-md  py-4 w-full px-4 lg:px-[100px] xl:px-desk left-1/2 -translate-x-1/2 transition-all duration-500 ${isShow ? "top-0" : "-top-[150px]"} bg-primary z-50`}>
+        <nav className={`fixed inline-flex items-center justify-between py-4 w-full px-4 lg:px-[100px] xl:px-desk left-1/2 -translate-x-1/2 transition-all duration-500 ${isShow ? "top-0" : "-top-[150px]"} bg-primary z-50`}>
             <a href="/"><img src="matna-logo.svg" alt="" className="max-w-8" /></a>
             <ul className="hidden lg:flex gap-12 justify-center">
                 {
