@@ -32,7 +32,7 @@ const AnimatedParagraphContainer = () => {
                     ))}
                 </motion.div>
                 <div>
-                    <img src="media/mathias-photo.jpeg" alt="" className="rounded-xl max-w-[500px] lg:max-w-[430px] aspect-square" />
+                    <img src="media/mathias-photo.jpeg" alt="" className="rounded-xl w-full max-w-[500px] lg:max-w-[430px] aspect-square" />
                 </div>
             </div>
 
