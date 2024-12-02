@@ -33,10 +33,10 @@ const FilterTechButton = ({ techs, selectedTech, setSelectedTech }) => {
             </button>
             <div
                 id=""
-                className={`z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 top-full mt-2 left-0 dark:bg-gray-700 ${isOpen ? "absolute" : "hidden"}`}
+                className={`bg-white divide-y divide-darkAccent rounded-lg shadow w-44 top-full mt-2 left-0 ${isOpen ? "z-20 absolute" : "hidden"}`}
             >
                 <ul
-                    className="py-2 text-sm text-gray-700 dark:text-gray-200"
+                    className="py-2 text-sm text-gray-700"
                 >
                     <li>
                         <button
