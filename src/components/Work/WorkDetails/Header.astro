@@ -1,0 +1,33 @@
+---
+import { formatDescription } from "../../../ui/textFormatter";
+
+const { title, description, slug } = Astro.props;
+
+const formattedDescription = formatDescription(description);
+---
+
+<h1
+    style={`view-transition-name: ${slug}-title`}
+    transition:animate="fade"
+    class="text-4xl md:text-6xl lg:text-8xl text-center font-title"
+>
+    {title}
+</h1>
+<p
+    class="md:text-xl lg:text-2xl my-24 bg-dark xl:px-desk"
+    style={`view-transition-name: ${slug}-desc`}
+>
+    {
+        formattedDescription.map((desc: any) => (
+            <span
+                class={
+                    desc.highlighted
+                        ? "font-bold text-orange-500 font-title"
+                        : "text-white"
+                }
+            >
+                {desc.text}
+            </span>
+        ))
+    }
+</p>

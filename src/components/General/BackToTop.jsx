@@ -24,14 +24,14 @@ const BackToTop = () => {
 
     const scrollToTop = () => {
         window.scrollTo({
-          top: 0,
-          behavior: 'smooth', // Hace que el scroll sea suave
+            top: 0,
+            behavior: 'smooth', // Hace que el scroll sea suave
         });
-      };
-    
+    };
+
 
     return (
-        <button onClick={scrollToTop} className={`fixed bottom-16 rotate-90 transition-all hover:cursor-pointer border border-darkAccent hover:bg-orange-500 hover:border-orange-500 px-4 py-2 rounded-full z-[10] ${showButton ? 'right-8' : '-right-[100px]'}`}>&larr; Top</button>
+        <button onClick={scrollToTop} className={`fixed bottom-16 z-40 rotate-90 transition-all hover:cursor-pointer border border-darkAccent hover:bg-orange-500 hover:border-orange-500 px-4 py-2 rounded-full ${showButton ? 'right-8' : '-right-[100px]'}`}>&larr; Top</button>
     )
 }
 

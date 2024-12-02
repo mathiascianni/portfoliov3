@@ -1,35 +1,32 @@
 ---
-import Layout from "../layouts/Layout.astro"
-import Starfield from "../components/General/Starfield.astro"
+import Layout from "../layouts/Layout.astro";
+import Starfield from "../components/General/Starfield.astro";
 ---
 
-<Layout title="404">
-    <div
-        class="bg-dark text-white h-full overflow-hidden relative min-h-screen"
+<Layout title="No se encontró la página" starsCount={10}>
+    <main
+        class="grid grid-cols-2 items-center h-full w-full relative min-h-screen px-desk text-xl font-light "
     >
-        <div
-            class="h-screen absolute w-full bg-[radial-gradient(100%_100%_at_50%_100%,rgba(64,59,103,1)_0%,rgba(64,59,103,0.00)_100%)]"
-        >
-        </div>
-        <Starfield starsCount={10} />
-        <main
-            class="flex flex-col items-center justify-center h-full w-full z-[2] relative"
-        >
-            <h1
-                class="text-8xl font-light mb-8 text-center"
-            >
-                404
+        <div class="flex flex-col gap-8 bg-white/1 backdrop-blur-md py-12 rounded-md">
+            <h1 class="text-4xl md:text-6xl lg:text-8xl font-title mb-8">
+                ¡Houston, tenemos un problema!
             </h1>
-            <p
-                class="text-3xl font-light mb-8 text-center"
-            >
-                Página no encontrada
+            <p class="text-3xl font-bold">Has aterrizado en una 404</p>
+            <p class="mb-8">
+                Este es el sector prohibido de la galaxia, donde las coordenadas
+                parecen haberse esfumado en el vacío espacial. ¿Qué significa
+                eso? Bueno, que esta página no existe, está en otra dimensión o
+                simplemente se la devoró un agujero negro.
             </p>
-            <a
-                href="/"
-                class="text-xl font-light mb-8 w-full hover:text-primary transition-all"
-                >&larr; Volver</a
-            >   
-        </main>
-    </div>
+            <p class="text-3xl font-bold">Opciones de misión:</p>
+            <ul class="list-disc pl-8 flex flex-col gap-4">
+                <li>Ajustá tu rumbo y regresa al inicio <a href="/" class="text-orange-500 font-medium border-b border-orange-500 font-title hover:text-white hover:border-white transition-all">apretando acá</a></li>
+                <li>Explora el universo de <a href="/projects" class="text-orange-500 font-medium border-b border-orange-500 font-title hover:text-white hover:border-white transition-all">mis proyectos</a>… ¡quizás encuentres lo que estás buscando!</li>
+                <li>O simplemente envía una señal de auxilio… aunque los aliens aún no contestan</li>
+            </ul>
+        </div>
+        <div class="flex justify-end items-center">
+            <img src="media/alien.png" alt="" class="max-w-[500px]" />
+        </div>
+    </main>
 </Layout>

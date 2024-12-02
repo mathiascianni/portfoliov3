@@ -1,0 +1,11 @@
+---
+import Layout from "../layouts/Layout.astro";
+import AnimatedParagraphContainer from "../components/About/AnimatedParagraphContainer";
+import ContactContainer from "../components/Contact/ContactContainer";
+---
+
+<Layout title="Contacto | Mathias Cianni" disableHeaderBg starsCount={20}>
+    <main class="p-4 lg:p-[100px] xl:p-desk relative pt-desk">
+        <ContactContainer client:load />
+    </main>
+</Layout>

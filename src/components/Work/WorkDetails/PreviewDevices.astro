@@ -1,0 +1,15 @@
+---
+const { desktopShowcase, mobileShowcase, title } = Astro.props
+---
+
+<div class="relative">
+    <img
+        src={desktopShowcase}
+        alt={`Demostración en dispositivo de escritorio de ${title}`}
+    />
+    <img
+        src={mobileShowcase}
+        alt={`Demostración en dispositivo mobile de ${title}`}
+        class="absolute bottom-0 right-0 max-w-[80px] sm:max-w-[140px] md:max-w-[200px] xl:max-w-[250px] 2xl:max-w-[300px]"
+    />
+</div>

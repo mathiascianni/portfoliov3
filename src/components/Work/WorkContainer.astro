@@ -5,6 +5,6 @@ import WorkContent from "./WorkContent";
 const worksToShow = works.slice(0, 3);
 ---
 
-<section class="min-h-screen z-[2] relative p-desk">
-    <WorkContent client:visible worksToShow={worksToShow} />
+<section class="relative p-4 lg:p-[100px] xl:p-desk">
+    <WorkContent client:load worksToShow={worksToShow} />
 </section>

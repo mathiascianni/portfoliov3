@@ -1,0 +1,21 @@
+---
+const { jobDone } = Astro.props;
+---
+
+<div
+    class="border-y border-darkAccent my-16 lg:my-desk py-24 w-full flex justify-center flex-wrap items-center gap-8 p-4 lg:p-[100px] xl:p-desk relative"
+>
+    <h2
+        class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-4xl text-orange-500 uppercase text-center font-title bg-dark px-8"
+    >
+        Lo que he hecho
+    </h2>
+    {
+        jobDone.map((job: any) => (
+            <p class="lg:text-2xl font-light bg-dark hover:text-darkAccent hover:bg-white transition-all rounded-sm py-1 px-2 hover:cursor-default">
+                <span class="text-darkAccent">#</span>
+                {job}
+            </p>
+        ))
+    }
+</div>

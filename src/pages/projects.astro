@@ -6,19 +6,15 @@ import WorkSectionContainer from "../components/Work/WorkSectionContainer";
 import { works } from "../ui/works";
 ---
 
-<Layout title="Mathias Cianni | Proyectos">
-    <div class="bg-dark text-white w-full h-full overflow-hidden relative">
-        <Starfield starsCount={20} />
-        <main class="z-10 relative p-desk min-h-screen">
-            <a
-                href="/"
-                class="text-xl font-light mb-desk inline-block hover:text-primary transition-all "
-                >&larr; Volver</a
-            >
-            <h1 class="text-7xl font-title uppercase mb-24">
+<Layout title="Proyectos | Mathias Cianni" starsCount={20} disableHeaderBg>
+    <div class=" w-full h-full overflow-hidden relative">
+        <main class="z-10 relative p-4 lg:p-[100px] xl:p-desk pt-desk min-h-screen">
+            <h1 class="text-4xl md:text-6xl lg:text-8xl font-title uppercase mb-24">
                 Una selección de mis proyectos
             </h1>
-            <WorkSectionContainer client:load works={works} ><Divisor /></WorkSectionContainer>
+            <div class="min-h-screen">
+                <WorkSectionContainer client:only works={works} />
+            </div>
         </main>
     </div>
 </Layout>

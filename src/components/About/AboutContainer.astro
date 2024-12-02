@@ -1,11 +1,10 @@
 ---
-import { aboutMe } from "../../ui/about";
 import AboutContentSection from "./AboutContentSection";
 ---
 
-<section class="min-h-screen relative z-[2] p-desk">
+<section class="relative p-4 lg:p-[100px] xl:p-desk">
     <div class="flex justify-around items-center gap-12">
-        <img src="media/astronaut.png" alt="ai generated astronaut" class="max-h-screen" />
+        <img src="media/astronaut.png" alt="ai generated astronaut" class="max-h-screen hidden lg:block" />
         <AboutContentSection client:load />
     </div>
 </section>

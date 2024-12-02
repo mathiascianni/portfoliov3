@@ -1,23 +1,22 @@
 import { useState } from "react"
 
-const FilterTechButton = ({ techs }) => {
+const FilterTechButton = ({ techs, selectedTech, setSelectedTech }) => {
     const [isOpen, setIsOpen] = useState(false)
-    const [selectedTech, setSelectedTech] = useState(null)
 
     const handleTechClick = (tech) => {
-        setSelectedTech(tech)
+        setSelectedTech(tech) // Guardar el nombre de la tecnología seleccionada
         setIsOpen(false)
     }
 
     return (
-        <div className="flex  relative">
+        <div className="flex relative">
             <button
                 id=""
-                className="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-white bg-dark  hover:bg-primary rounded-md border border-primary transition-all"
+                className="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center bg-dark  hover:bg-primary rounded-md border border-primary transition-all"
                 type="button"
                 onClick={() => setIsOpen(!isOpen)}
             >
-                {selectedTech ? selectedTech : "Elegir tecnología"}
+                {selectedTech ? selectedTech : "Todas las tecnologías"}
                 <svg
                     aria-hidden="true"
                     className="ml-1 w-4 h-4"
@@ -46,7 +45,7 @@ const FilterTechButton = ({ techs }) => {
                             onClick={() => handleTechClick(null)}
                         >
                             <div className="inline-flex items-center">
-                                Elegir tecnología
+                                Todas las tecnologías
                             </div>
                         </button>
                     </li>

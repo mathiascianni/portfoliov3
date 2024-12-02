@@ -9,10 +9,10 @@ export const navLinks = [
     },
     {
         name: "Sobre mí",
-        href: "#about",
+        href: "/about",
     },
     {
         name: "Contacto",
-        href: "#contact",
+        href: "/contact",
     },
 ]
