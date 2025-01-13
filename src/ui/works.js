@@ -1,5 +1,42 @@
 export const works = [
     {
+        slug: "arenera-padua",
+        title: "Arenera Padua",
+        link: "https://arenerapadua.com/",
+        description: "En **Arenera Padua**, trabajé en el desarrollo y diseño de una página web informativa que reflejara la identidad de la empresa y destacara sus servicios. Desde el inicio, me enfoqué en transmitir los valores de **confiabilidad y profesionalismo** a través de un diseño limpio y accesible, que representara de manera coherente la imagen de marca. Implementé elementos visuales y una paleta de colores alineada con el rubro, reforzando el branding y creando una experiencia memorable para los usuarios. Además, **optimicé el sitio** para motores de búsqueda, configurando rutas clave que facilitaran la visibilidad online. El proyecto incluyó la creación de una galería dinámica para mostrar los productos y servicios, asegurando una navegación fluida y funcional.",
+        jobDone: [
+            "HTML",
+            "CSS",
+            "Responsive Design",
+            "Frontend Development",
+            "React",
+            "Tailwind",
+            "Javascript",
+            "Figma",
+            "UX",
+            "Framer Motion",
+            "Branding"
+        ],
+        miniature: "/media/arenerapadua/miniature.png",
+        desktopShowcase: "/media/arenerapadua/desktop-showcase.png",
+        mobileShowcase: "/media/arenerapadua/mobile-showcase.png",
+        fullpageShowcase: "/media/arenerapadua/fullpage-showcase.png",
+        date: "2024",
+        type: "Landing Page",
+        typeOfWork: "Freelance",
+        techs: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "React",
+            "Tailwind",
+            "Figma",
+            "Framer Motion",
+            "Swiper.js",
+            "Email.js"
+        ],
+    },
+    {
         slug: "the-refill-stop",
         title: "The Refill Stop",
         link: "https://www.therefillstop.com/",
